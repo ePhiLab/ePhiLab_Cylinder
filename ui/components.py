@@ -58,8 +58,8 @@ def hero_header(
     eyebrow: str = "eΦLab",
 ) -> None:
     """
-    Encabezado principal construido únicamente
-    con componentes nativos de Streamlit.
+    Encabezado principal construido con componentes nativos de Streamlit.
+    El logo se muestra circular sin afectar otras imágenes.
     """
 
     logo_column, text_column = st.columns(
@@ -78,7 +78,7 @@ def hero_header(
                     size=180,
                 )
 
-               st.image(
+                st.image(
                     circular_logo,
                     width=92,
                 )
