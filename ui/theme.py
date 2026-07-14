@@ -114,10 +114,11 @@ def apply_theme() -> None:
                 border-radius: 11px;
             }}
 
-            div[data-testid="stImage"] img {{
-                border-radius: 50%;
-                object-fit: cover;
-            }}
+            /* Las imágenes generales conservan su forma original */
+            div[data-testid="stImage"] img {
+                border-radius: 12px;
+                object-fit: contain;
+            }
 
             @media (max-width: 700px) {{
                 .block-container {{
