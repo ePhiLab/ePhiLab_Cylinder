@@ -115,10 +115,10 @@ def apply_theme() -> None:
             }}
 
             /* Las imágenes generales conservan su forma original */
-            div[data-testid="stImage"] img {
+            div[data-testid="stImage"] img {{
                 border-radius: 12px;
                 object-fit: contain;
-            }
+            }}
 
             @media (max-width: 700px) {{
                 .block-container {{
