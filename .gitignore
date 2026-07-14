@@ -21,7 +21,13 @@ Thumbs.db
 
 # Datos temporales
 *.csv
+# Datos experimentales
+*.csv
 *.xlsx
+*.xls
+
+# Archivo oficial descargable
+!assets/downloads/Simulador_Cilindro.xlsx
 *.xls
 
 # Archivos generados
