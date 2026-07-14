@@ -14,7 +14,7 @@ from ui.theme import apply_theme
 
 st.set_page_config(
     page_title="eΦLab: Cilindro",
-    page_icon="⚙️",
+    page_icon="🐢",
     layout="wide",
     initial_sidebar_state="expanded",
 )
