@@ -1,7 +1,55 @@
 from pathlib import Path
 
 import streamlit as st
+from PIL import Image, ImageDraw
 
+def make_circular_image(
+    image_path: str | Path,
+    size: int = 180,
+) -> Image.Image:
+    """
+    Convierte una imagen en un logo circular
+    sin modificar las demás imágenes de la app.
+    """
+
+    image = Image.open(image_path).convert("RGBA")
+
+    width, height = image.size
+    crop_size = min(width, height)
+
+    left = (width - crop_size) // 2
+    top = (height - crop_size) // 2
+    right = left + crop_size
+    bottom = top + crop_size
+
+    image = image.crop((left, top, right, bottom))
+    image = image.resize((size, size))
+
+    mask = Image.new(
+        "L",
+        (size, size),
+        0,
+    )
+
+    draw = ImageDraw.Draw(mask)
+    draw.ellipse(
+        (0, 0, size, size),
+        fill=255,
+    )
+
+    circular_image = Image.new(
+        "RGBA",
+        (size, size),
+        (0, 0, 0, 0),
+    )
+
+    circular_image.paste(
+        image,
+        (0, 0),
+        mask,
+    )
+
+    return circular_image
 
 def hero_header(
     title: str,
@@ -25,8 +73,13 @@ def hero_header(
             path = Path(logo_path)
 
             if path.exists():
-                st.image(
-                    str(path),
+                circular_logo = make_circular_image(
+                    path,
+                    size=180,
+                )
+
+               st.image(
+                    circular_logo,
                     width=92,
                 )
             else:
