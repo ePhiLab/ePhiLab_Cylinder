@@ -87,13 +87,13 @@ with st.expander("Modelo físico implementado", expanded=False):
             r"""
             - \(a\): aceleración sobre la rampa.
             - \(g\): aceleración de la gravedad.
-            - \(m_1\): masa del contrapeso.
+            - \($m_1$\): masa del contrapeso.
             - \(M\): masa del cilindro.
             - \(N\): número de varillas.
             - \(m\): masa de cada varilla.
             - \(R\): radio externo del cilindro.
-            - \(r_x\): radio de ubicación de las varillas.
-            - \(\theta\): ángulo de la rampa.
+            - \($r_x$\): radio de ubicación de las varillas.
+            - \($\theta$\): ángulo de la rampa.
             """
         )
 
