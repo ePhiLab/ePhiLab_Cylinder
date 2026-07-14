@@ -24,62 +24,71 @@ apply_theme()
 BASE_DIR = Path(__file__).resolve().parent
 LOGO_PATH = BASE_DIR / "assets" / "EphiCiencia_Logo.png"
 
+
 hero_header(
     eyebrow="eΦLab · Laboratorio digital",
     title="Movimiento del cilindro",
     subtitle=(
-        "Aplicación educativa para predecir el movimiento, analizar datos "
-        "experimentales y comparar resultados obtenidos mediante FizziQ."
+        "Aplicación educativa para predecir el movimiento, "
+        "analizar datos experimentales y comparar resultados "
+        "obtenidos mediante FizziQ."
     ),
     logo_path=LOGO_PATH,
 )
 
+
 callout(
-    "Esta versión establece la identidad visual y la estructura general de la app. "
-    "Los módulos experimentales se incorporarán progresivamente."
+    "La plataforma complementa el trabajo experimental, "
+    "el análisis de video y la interpretación física de los resultados."
 )
+
 
 section_header(
     "Módulos de la aplicación",
-    "La plataforma se organizará en herramientas independientes y conectadas.",
+    "Seleccione una herramienta desde el menú lateral.",
 )
 
-col1, col2 = st.columns(2, gap="large")
 
-with col1:
+module_col1, module_col2 = st.columns(
+    2,
+    gap="large",
+)
+
+with module_col1:
     feature_card(
         icon="⚙️",
         title="Predicción del movimiento",
         text=(
-            "Calcula la aceleración teórica del sistema cilindro–contrapeso "
-            "y predice el sentido del movimiento."
+            "Calcula la aceleración teórica del sistema "
+            "cilindro–contrapeso y predice el sentido del movimiento."
         ),
-        badge="Primer módulo",
+        badge="Módulo disponible",
     )
 
-with col2:
+with module_col2:
     feature_card(
         icon="📈",
         title="Análisis de datos FizziQ",
         text=(
-            "Importa archivos CSV, permite seleccionar variables y aplica "
-            "ajustes lineales, cuadráticos, cúbicos y exponenciales."
+            "Importará archivos CSV y permitirá aplicar ajustes "
+            "lineales, cuadráticos, cúbicos y exponenciales."
         ),
         badge="Próximamente",
     )
 
+
 section_header(
     "Objetivo educativo",
-    "La aplicación complementa el trabajo experimental, sin reemplazarlo.",
+    "La aplicación apoya la experiencia, pero no reemplaza el trabajo experimental.",
 )
 
 st.write(
     """
-    eΦLab busca facilitar la preparación de la experiencia, el análisis de datos
-    y la interpretación de resultados. Los estudiantes continuarán realizando
-    el montaje, la medición y la discusión colaborativa de la práctica.
+    eΦLab facilita la predicción, el procesamiento de datos y la comparación
+    entre el modelo teórico y los resultados experimentales. Los estudiantes
+    continúan realizando el montaje, la medición y la discusión colaborativa
+    de la práctica.
     """
 )
 
 footer()
-
