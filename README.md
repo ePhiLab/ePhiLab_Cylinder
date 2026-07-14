@@ -1,29 +1,16 @@
 eΦLab: Cilindro
-Base visual del nuevo repositorio de la aplicación educativa.
-Estructura inicial
+Framework visual definitivo.
+Editar el menú lateral
+Abra:
 ```text
-ephi-lab-cilindro/
-├── app.py
-├── assets/
-├── modules/
-├── pages/
-├── ui/
-│   ├── __init__.py
-│   ├── theme.py
-│   └── components.py
-├── .streamlit/
-│   └── config.toml
-├── requirements.txt
-└── .gitignore
+ui/navigation.py
 ```
-Primera ejecución
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-Logo
-Coloque el archivo:
+Cambie `title`, `icon`, `url_path` o el orden de los objetos `st.Page`.
+Colocar el logo
+Use:
 ```text
 assets/EphiCiencia_Logo.png
 ```
-Si todavía no está disponible, la aplicación funciona sin mostrar el logo.
+Importante
+No use una carpeta `pages/` con este framework. La navegación se controla
+mediante `st.Page` y `st.navigation`.
